@@ -1,0 +1,28 @@
+{
+  "name": "runkeeper",
+  "description": "Record all your running activities!",
+  "main": "./server/server.js",
+  "authors": [
+    "Alonzo Alden"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "run",
+    "fitness",
+    "workout"
+  ],
+  "homepage": "https://github.com/alonzoalden/runkeeper",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.9",
+    "angular-route": "^1.5.9",
+    "angular-mocks": "^1.5.9"
+  }
+}
