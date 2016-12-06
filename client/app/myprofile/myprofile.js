@@ -8,8 +8,8 @@ angular.module('runkeeper.myprofile', [])
   var initializeRuns = function () {
     MyProfile.getAll()
       .then(function (runs) {
-          console.log($scope.data.runs.exertion)
         $scope.data.runs = runs;
+          console.log($scope.data.runs.exertion)
       })
       .catch(function (error) {
         console.error(error);
