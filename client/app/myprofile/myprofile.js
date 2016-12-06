@@ -18,7 +18,7 @@ angular.module('runkeeper.myprofile', [])
       })
       .then(function (runs) {
         runs.forEach(function(run) {
-          run.date = run.date.toString();
+          run.date = run.date.toString().slice(0, 10);
           run.points = Math.ceil((run.exertion * run.distance * run.time) * .005);
           $scope.data.totalPoints += Math.ceil((run.exertion * run.distance * run.time) * .005);
           $scope.data.totalRuns += 1;
