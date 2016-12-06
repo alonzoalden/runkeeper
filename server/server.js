@@ -34,7 +34,8 @@ app.post('/api/myprofile/', runController.addRun);
 app.use(helpers.errorLogger);
 app.use(helpers.errorHandler);
 
-app.listen(4000);
-console.log('You are now connected on port 4000...')
+app.listen(process.env.PORT || 3000, function(){
+  console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+});
 
 module.exports = app;
