@@ -8,8 +8,8 @@ angular.module('runkeeper.myprofile', [])
   $scope.data.totalDistance = 0;
   $scope.data.totalTime = 0;
   $scope.data.totalRuns = 0;
+  $scope.data.motivation = "";
 
-  console.log($scope.data.totalPoints)
   var initializeRuns = function () {
     MyProfile.getAll()
       .then(function (runs) {
@@ -23,6 +23,9 @@ angular.module('runkeeper.myprofile', [])
           $scope.data.totalTime += run.time;
           $scope.data.totalDistance += run.distance;
         })
+        if ($scope.data.totalPoints === 0) {
+          $scope.data.motivation = "What are you waiting for? Let's start running!"
+        }
         console.log($scope.data.totalPoints);
       })
       .catch(function (error) {
