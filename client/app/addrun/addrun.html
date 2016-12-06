@@ -24,7 +24,7 @@
 
       <div class="panel-body">
       <p>This is your perceived level of exertion. 1 Being low and 10 being maximum. 1 would be the equivilent to a casual walk and ten would be similar to a race.</p>
-        <div class="btn-group" ng-model="run.radio" bs-radio-group>
+        <div class="btn-group" ng-model="run.exertion" bs-radio-group>
 
         <label class="btn btn-default"><input type="radio" class="btn btn-default" value="1"> 1</label>
         <label class="btn btn-default"><input type="radio" class="btn btn-default" value="2"> 2</label>
@@ -73,41 +73,15 @@
         </div>
       </div>
 
-      <button type="submit" value="addrun">
+      <center>
+      <button class="btn btn-primary" type="submit" value="addrun">
         Submit
       </button>
+      </center><br>
 
     </div>
     </form>
   </div>
-    <form class="form-inline" role="form">
 
-  <div class="form-group">
-    <label><i class="fa fa-globe"></i> State</label>
-    <input type="text" class="form-control" ng-model="selectedState" bs-options="state for state in states" placeholder="Enter state" bs-typeahead>
-  </div>
-  <div class="form-group">
-    <label>Icon</label>
-    <input type="text" class="form-control" ng-model="selectedIcon" data-min-length="0" data-html="1" data-auto-select="true" data-animation="am-flip-x" bs-options="icon as icon.label for icon in icons" placeholder="Enter icon" bs-typeahead>
-  </div>
 
-  <div class="creator">
-    <img ng-show="loading" class="spinner" src="" />
-    <form name='shortlyForm' ng-submit="addLink()" novalidate>
-      <input name='run' type="number"
-        ng-model="run.url"
-        placeholder="Enter your url here" required
-        ng-class="{'error': shortlyForm.$invalid && shortlyForm.$dirty}"/>
-
-      <button type="submit" value="addrun" ng-disabled='shortlyForm.$invalid'>
-        add
-      </button>
-    </form>
-    <div ng-if='shortlyForm.link.$error.required && shortlyForm.$dirty' class="message">
-      <h2>Url required</h2>
-    </div>
-    <div ng-show='shortlyForm.link.$error.url && shortlyForm.$dirty' class="message">
-      <h2>Not a valid url</h2>
-    </div>
-  </div>
 </div>

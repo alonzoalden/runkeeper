@@ -2,12 +2,16 @@ angular.module('runkeeper.services', [])
 
 .factory('MyProfile', function ($http) {
 
+  //CREATE GET USERNAME HERE
+  //CREARE GET LAST RUN
+
   var getAll = function () {
     return $http({
       method: 'GET',
       url: '/api/myprofile'
     })
     .then(function (resp) {
+      console.log('RESP: ' + JSON.stringify(resp))
       return resp.data;
     });
   };

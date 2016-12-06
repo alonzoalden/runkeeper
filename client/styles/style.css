@@ -9,7 +9,9 @@ body {
   font-size: 30px;
 }
 
-
+.panel-default {
+  width: 600px;
+}
 /*
 
 a {
