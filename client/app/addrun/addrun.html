@@ -47,7 +47,7 @@
       <div class="panel-body">
         <div class="form-group">
           <p> Enter your total distance ran in miles. Decimals are OK.</p>
-          <input type="number" class="form-control" ng-model="run.distance" placeholder="Distance in miles"  required="required" bs-typeahead>
+          <input type="number" class="form-control" ng-model="run.distance" placeholder="Distance in miles"  required="required" bs-typeahead data-trigger="focus" bs-tooltip="tooltipDistance">
         </div>
       </div>
 
@@ -57,7 +57,6 @@
 
       <div class="panel-body" bs-tooltip="'Enter the total amount of minutes you've ran.'" >
         <div class="form-group" >
-          <p> Enter the total amount of minutes you've ran.</p>
           <input type="number" class="form-control" ng-model="run.time" placeholder="Total minutes" required="required" bs-typeahead data-trigger="focus" bs-tooltip="tooltipTime">
         </div>
       </div>
@@ -68,8 +67,7 @@
 
       <div class="panel-body">
         <div class="form-group">
-          <p> Enter any notes or messages you may want to record.</p>
-          <input type="text" class="form-control" ng-model="run.message" placeholder="Messages" bs-typeahead>
+          <input type="text" class="form-control" ng-model="run.message" placeholder="Messages" bs-typeahead data-trigger="focus" bs-tooltip="tooltipNotes">
         </div>
       </div>
 
