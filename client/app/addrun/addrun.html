@@ -24,7 +24,7 @@
 
       <div class="panel-body">
       <p>This is your perceived level of exertion. 1 Being low and 10 being maximum. 1 would be the equivilent to a casual walk and ten would be similar to a race.</p>
-        <div class="btn-group" ng-model="run.exertion" bs-radio-group>
+        <div class="btn-group" ng-model="run.exertion" bs-radio-group bs-tooltip="tooltipExertion" data-type="info" data-animation="am-fade-and-scale" data-trigger="focus" >
 
         <label bs-tooltip="tooltipExertion" data-trigger="focus" class="btn btn-default"><input type="radio" class="btn btn-default" value="1"> 1</label>
         <label bs-tooltip="tooltipExertion" data-trigger="focus" class="btn btn-default"><input type="radio" class="btn btn-default" value="2"> 2</label>
