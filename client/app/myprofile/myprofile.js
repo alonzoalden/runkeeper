@@ -5,7 +5,9 @@ angular.module('runkeeper.myprofile', [])
 
   $scope.data = {};
   $scope.data.totalPoints = 0;
-
+  $scope.data.totalDistance = 0;
+  $scope.data.totalTime = 0;
+  $scope.data.totalRuns = 0;
 
   console.log($scope.data.totalPoints)
   var initializeRuns = function () {
@@ -17,6 +19,9 @@ angular.module('runkeeper.myprofile', [])
       .then(function (runs) {
         runs.forEach(function(run) {
           $scope.data.totalPoints += run.exertion;
+          $scope.data.totalRuns += 1;
+          $scope.data.totalTime += run.time;
+          $scope.data.totalDistance += run.distance;
         })
         console.log($scope.data.totalPoints);
       })
