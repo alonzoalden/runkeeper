@@ -1,25 +1,105 @@
 <div id='container'>
 <!-- Your code here -->
 <!-- START SOLUTION -->
-  <nav class="navigation">
-    <ul>
-      <li>
-          <a href="#/links">My Profile</a>
-      </li>
-       <li>
-          <a class='selected' href="#/shorten">Add Workout</a>
-      </li>
-    </ul>
-  </nav>
+  <div class="container-fluid">
+    <nav class="navbar navbar-default" role="navigation" bs-navbar>
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">RunKeeper</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li data-match-route="/$"><a href="#/myprofile">My Profile</a></li>
+        <li data-match-route="/$"><a href="#/myprofile">Friends</a></li>
+        <li data-match-route="/addrun"><a href="#/addrun"><strong>Add Run</strong></a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="container-fluid">
+  <form ng-submit="processRun()" name="runForm">
+    <div class="panel panel-default">
+
+      <div class="panel-heading">
+        <h3 class="panel-title">Level of Exertion: </h3>
+      </div>
+
+      <div class="panel-body">
+      <p>This is your perceived level of exertion. 1 Being low and 10 being maximum. 1 would be the equivilent to a casual walk and ten would be similar to a race.</p>
+        <div class="btn-group" ng-model="run.radio" bs-radio-group>
+
+        <label class="btn btn-default"><input type="radio" class="btn btn-default" value="1"> 1</label>
+        <label class="btn btn-default"><input type="radio" class="btn btn-default" value="2"> 2</label>
+        <label class="btn btn-default"><input type="radio" class="btn btn-default" value="3"> 3</label>
+        <label class="btn btn-default"><input type="radio" class="btn btn-default" value="4"> 4</label>
+        <label class="btn btn-default"><input type="radio" class="btn btn-default" value="5"> 5</label>
+        <label class="btn btn-default"><input type="radio" class="btn btn-default" value="6"> 6</label>
+        <label class="btn btn-default"><input type="radio" class="btn btn-default" value="7"> 7</label>
+        <label class="btn btn-default"><input type="radio" class="btn btn-default" value="8"> 8</label>
+        <label class="btn btn-default"><input type="radio" class="btn btn-default" value="9"> 9</label>
+        <label class="btn btn-default"><input type="radio" class="btn btn-default" value="10"> 10</label>
+        <br><br><br>
+        </div>
+      </div>
+
+      <div class="panel-heading">
+        <h3 class="panel-title">Distance:</h3>
+      </div>
+
+      <div class="panel-body">
+        <div class="form-group">
+          <p> Enter your total distance ran in miles. Decimals are OK.</p>
+          <input type="number" class="form-control" ng-model="run.distance" placeholder="Distance in miles"  required="required" bs-typeahead>
+        </div>
+      </div>
+
+      <div class="panel-heading">
+        <h3 class="panel-title">Duration:</h3>
+      </div>
+
+      <div class="panel-body">
+        <div class="form-group">
+          <p> Enter the total amount of minutes you've ran.</p>
+          <input type="number" class="form-control" ng-model="run.time" placeholder="Total minutes" required="required" bs-typeahead>
+        </div>
+      </div>
+
+      <div class="panel-heading">
+        <h3 class="panel-title">Notes:</h3>
+      </div>
+
+      <div class="panel-body">
+        <div class="form-group">
+          <p> Enter any notes or messages you may want to record.</p>
+          <input type="text" class="form-control" ng-model="run.message" placeholder="Messages" required="required" bs-typeahead>
+        </div>
+      </div>
+
+      <button type="submit" value="addrun">
+        Submit
+      </button>
+
+    </div>
+    </form>
+  </div>
+    <form class="form-inline" role="form">
+
+  <div class="form-group">
+    <label><i class="fa fa-globe"></i> State</label>
+    <input type="text" class="form-control" ng-model="selectedState" bs-options="state for state in states" placeholder="Enter state" bs-typeahead>
+  </div>
+  <div class="form-group">
+    <label>Icon</label>
+    <input type="text" class="form-control" ng-model="selectedIcon" data-min-length="0" data-html="1" data-auto-select="true" data-animation="am-flip-x" bs-options="icon as icon.label for icon in icons" placeholder="Enter icon" bs-typeahead>
+  </div>
+
   <div class="creator">
-    <img ng-show="loading" class="spinner" src="assets/spiffygif_46x46.gif" />
+    <img ng-show="loading" class="spinner" src="" />
     <form name='shortlyForm' ng-submit="addLink()" novalidate>
-      <input name='link' type="url"
-        ng-model="link.url"
+      <input name='run' type="number"
+        ng-model="run.url"
         placeholder="Enter your url here" required
         ng-class="{'error': shortlyForm.$invalid && shortlyForm.$dirty}"/>
 
-      <button type="submit" value="Shorten" ng-disabled='shortlyForm.$invalid'>
+      <button type="submit" value="addrun" ng-disabled='shortlyForm.$invalid'>
         add
       </button>
     </form>
@@ -30,5 +110,4 @@
       <h2>Not a valid url</h2>
     </div>
   </div>
-  <!-- END SOLUTION -->
 </div>

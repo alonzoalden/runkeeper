@@ -4,7 +4,9 @@ angular.module('runkeeper.addrun', [])
   // Your code here
 
   $scope.run = {};
-  $scope.addRun = function () {
+
+  $scope.processRun = function () {
+    console.log('HELLO')
     $scope.loading = true;
     MyProfile.addOne($scope.run)
       .then(function () {
@@ -15,4 +17,13 @@ angular.module('runkeeper.addrun', [])
         console.log(error);
       });
   };
+
+  $scope.exertionButton = {
+    "radio": 5
+  }
+
+  $scope.distance = {
+    'message': 'message'
+  }
+
   });

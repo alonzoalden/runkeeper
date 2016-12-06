@@ -1,29 +1,41 @@
-<div id='container'>
-  <!-- Your html here -->
-  <!-- START SOLUTION -->
+<!-- <div id='container'>
+
   <nav class="navigation">
     <ul>
       <li>
-          <a class="selected" href="#/links">My Profile</a>
+          <a class="selected" href="#/myprofile">My Profile</a>
       </li>
        <li>
-          <a href="#/shorten">Add Workout</a>
+          <a href="#/addrun">Add Workout</a>
       </li>
     </ul>
   </nav>
+</div> -->
+<div class="container-fluid">
+  <nav class="navbar navbar-default" role="navigation" bs-navbar>
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">RunKeeper</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li data-match-route="/"><a href="#/myprofile">My Profile</a></li>
+      <li data-match-route="/$"><a href="#/myprofile">Friends</a></li>
+      <li data-match-route="/addrun"><a href="#/addrun"><strong>Add Run</strong></a></li>
+    </ul>
+  </nav>
 </div>
-<input type='text' ng-model='search' placeholder='filter' />
+
 <div class="runs">
   <div class="run"
-      ng-repeat="run in data.runs | filter:search | orderBy:'-created_at'">
+      ng-repeat="run in data.runs | orderBy:'-created_at'">
     <!-- <img src="assets/redirect_icon.png"> -->
     <div class="info">
+
       <div class="distance">
-        <span class="count">{{ run.distance }}</span>Miles
+        <span class="distance">{{ run.distance }} Miles</span>
       </div>
-      <div class="title">{{ link.title }}</div>
-      <div class="original">{{ link.url }}</div>
-      <a href="{{ link.baseUrl }}/{{ link.code }}">{{ link.baseUrl }}/{{ link.code }}</a>
+      <div class="exertion">{{ run.exertion }}</div>
+      <div class="message">{{ run.message }}</div>
+      <div class="">{{ run.time }}</div>
     </div>
   </div>
   <!-- END SOLUTION -->

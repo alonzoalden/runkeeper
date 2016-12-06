@@ -3,7 +3,10 @@ angular.module('runkeeper', [
   'runkeeper.myprofile',
   'runkeeper.addrun',
   'runkeeper.auth',
-  'ngRoute'
+  'ngRoute',
+  'mgcrea.ngStrap',
+  'mgcrea.ngStrap.navbar'
+
 ])
 .config(function ($routeProvider, $httpProvider) {
 
