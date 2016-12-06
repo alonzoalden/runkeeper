@@ -1,9 +1,22 @@
 <div id='signin'>
   <h1>Sign in to Run Keeper:</h1>
   <form name="signinForm" ng-submit='signin()'>
-    <input type='text'ng-model='user.username'>
+    <input type='text' ng-model='user.username'>
     <input type="password" ng-model='user.password'>
     <button>Sign In</button>
   </form>
   <a href="#/signup">Don't have an account? <strong>Sign up</strong> ...</a>
 </div>
+
+<div class="container">
+
+  <form name="signinForm" ng-submit='signin()' class="form-signin">
+    <h2 class="form-signin-heading">Please sign in</h2>
+    <label for="inputEmail" class="sr-only">User Name</label>
+    <input type="text" class="form-control" placeholder="User Name" required autofocus ng-model='user.username'>
+    <label for="inputPassword" class="sr-only">Password</label>
+    <input type="password"  class="form-control" placeholder="Password" required ng-model='user.password'>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+  </form>
+
+    </div> <!-- /container -->
