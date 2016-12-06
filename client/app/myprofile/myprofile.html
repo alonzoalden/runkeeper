@@ -25,6 +25,9 @@
 </div>
 
 
+<div class='container-fluid'>
+  <jumbotron> Welcome</jumbotron>
+</div>
 
 <div class='container-fluid'>
   <div class="panel panel-default">
@@ -39,7 +42,7 @@
               <li class="list-group-item"><strong> Exertion</strong>: {{ run.exertion }}</li>
               <li class="list-group-item"><strong> Distance</strong>: {{ run.distance }} miles.</li>
               <li class="list-group-item"><strong> Total Time</strong>: {{ run.time }} minutes.</li>
-              <li class="list-group-item"><strong> Notes</strong>: <blockquote>{{ run.message }}</blockquote></li>
+              <li class="list-group-item"><strong> Notes</strong>: {{ run.message }}</li>
             </ul>
 
           <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
