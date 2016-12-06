@@ -50,10 +50,12 @@
           <div class="panel panel-success">
           <div class="panel-heading"> Run on {{ run.date }}</div>
             <ul class="list-group">
+              <li class="list-group-item"><h5><strong> Points</strong>: {{ run.points }}</h5></li>
               <li class="list-group-item"><strong> Exertion</strong>: {{ run.exertion }}</li>
               <li class="list-group-item"><strong> Distance</strong>: {{ run.distance }} miles.</li>
               <li class="list-group-item"><strong> Total Time</strong>: {{ run.time }} minutes.</li>
               <li class="list-group-item"><strong> Notes</strong>: {{ run.message }}</li>
+
             </ul>
 
           <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
