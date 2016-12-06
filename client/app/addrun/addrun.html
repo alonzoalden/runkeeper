@@ -35,7 +35,7 @@
         <label bs-tooltip="tooltipExertion" data-trigger="focus" class="btn btn-default"><input type="radio" class="btn btn-default" value="7"> 7</label>
         <label bs-tooltip="tooltipExertion" data-trigger="focus" class="btn btn-default"><input type="radio" class="btn btn-default" value="8"> 8</label>
         <label bs-tooltip="tooltipExertion" data-trigger="focus" class="btn btn-default"><input type="radio" class="btn btn-default" value="9"> 9</label>
-        <label bs-tooltip="tooltipExertion" data-trigger="focus" class="btn btn-default"><input type="radio" class="btn btn-default" value="10"> 10</label>
+        <label bs-tooltip="tooltipExertion" data-type="info" data-animation="am-fade-and-scale" data-trigger="focus" class="btn btn-default"><input type="radio" class="btn btn-default" value="10"> 10</label>
         <br><br><br>
         </div>
       </div>
@@ -58,7 +58,7 @@
       <div class="panel-body" bs-tooltip="'Enter the total amount of minutes you've ran.'" >
         <div class="form-group" >
           <p> Enter the total amount of minutes you've ran.</p>
-          <input type="number" class="form-control" ng-model="run.time" placeholder="Total minutes" required="required" bs-typeahead placeholder="Focus to toggle tooltip" data-trigger="focus" bs-tooltip="tooltipTime">
+          <input type="number" class="form-control" ng-model="run.time" placeholder="Total minutes" required="required" bs-typeahead data-trigger="focus" bs-tooltip="tooltipTime">
         </div>
       </div>
 
