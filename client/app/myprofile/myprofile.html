@@ -24,22 +24,6 @@
   </nav>
 </div>
 
-<div class="runs">
-  <div class="run"
-      ng-repeat="run in data.runs | orderBy:'-date'">
-    <!-- <img src="assets/redirect_icon.png"> -->
-    <div class="info">
-
-      <div class="distance">
-        <span class="distance">{{ run.distance }} Miles</span>
-      </div>
-      <div class="date"> {{ run.date }}</div>
-      <div class="exertion">{{ run.exertion }}</div>
-      <div class="message">{{ run.message }}</div>
-      <div class="">{{ run.time }}</div>
-    </div>
-  </div>
-</div>
 
 
 <div class='container-fluid'>
@@ -55,10 +39,8 @@
               <li class="list-group-item"><strong> Exertion</strong>: {{ run.exertion }}</li>
               <li class="list-group-item"><strong> Distance</strong>: {{ run.distance }} miles.</li>
               <li class="list-group-item"><strong> Total Time</strong>: {{ run.time }} minutes.</li>
-              <li class="list-group-item"><strong> Notes</strong>: {{ run.message }}</li>
+              <li class="list-group-item"><strong> Notes</strong>: <quote>{{ run.message }}</quote></li>
             </ul>
-          <h2>Workout</h2>
-          <h4>{{ run.date }}</h4>
 
           <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
         </div>
