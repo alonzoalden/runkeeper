@@ -8,7 +8,8 @@ angular.module('runkeeper.myprofile', [])
 
   $scope.data.runs.forEach(function(run) {
     $scope.data.totalPoints += run.exertion
-  }
+  })
+
   console.log($scope.data.totalPoints)
   var initializeRuns = function () {
     MyProfile.getAll()
