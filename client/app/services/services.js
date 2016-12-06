@@ -11,7 +11,6 @@ angular.module('runkeeper.services', [])
       url: '/api/myprofile'
     })
     .then(function (resp) {
-      console.log('RESP: ' + JSON.stringify(resp))
       return resp.data;
     });
   };
