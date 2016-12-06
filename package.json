@@ -2,9 +2,10 @@
   "name": "runkeeper",
   "version": "1.0.0",
   "description": "Record all your running activities!",
-  "main": "./server/server.js",
+  "main": "server/server.js",
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "start": "node server/server.js"
   },
   "repository": {
     "type": "git",
