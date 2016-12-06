@@ -18,8 +18,7 @@ angular.module('runkeeper.myprofile', [])
         runs.forEach(function(run) {
           $scope.data.totalPoints += run.exertion;
         })
-        $scope.data.totalPoints
-        console.log(runs);
+        console.log($scope.data.totalPoints);
       })
       .catch(function (error) {
         console.error(error);
