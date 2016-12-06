@@ -24,9 +24,11 @@ angular.module('runkeeper.myprofile', [])
           $scope.data.totalDistance += run.distance;
         })
         if ($scope.data.totalPoints === 0) {
-          $scope.data.motivation = "What are you waiting for? Let's start running!"
+          $scope.data.motivation = "What are you waiting for? Let's start running!";
+        } else {
+          $scope.data.motivation = "Keep up the good work!";
         }
-        console.log($scope.data.totalPoints);
+
       })
       .catch(function (error) {
         console.error(error);
