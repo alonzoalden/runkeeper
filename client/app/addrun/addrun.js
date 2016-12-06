@@ -5,6 +5,7 @@ angular.module('runkeeper.addrun', [])
 
   $scope.run = {};
   $scope.run.exertion = 5;
+  $scope.tooltip = 'HELLLOOO';
   $scope.processRun = function () {
     $scope.loading = true;
     MyProfile.addOne($scope.run)
