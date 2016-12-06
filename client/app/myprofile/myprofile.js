@@ -9,6 +9,7 @@ angular.module('runkeeper.myprofile', [])
   $scope.data.totalTime = 0;
   $scope.data.totalRuns = 0;
   $scope.data.motivation = "";
+  $scope.data.runs.points = 0;
 
   var initializeRuns = function () {
     MyProfile.getAll()
