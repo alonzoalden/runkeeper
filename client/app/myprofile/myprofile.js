@@ -4,7 +4,6 @@ angular.module('runkeeper.myprofile', [])
   // Your code here
 
   $scope.data = {};
-  console.log($scope.data.runs.exertion)
   var initializeRuns = function () {
     MyProfile.getAll()
       .then(function (runs) {
