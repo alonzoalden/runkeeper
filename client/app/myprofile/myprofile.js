@@ -12,6 +12,7 @@ angular.module('runkeeper.myprofile', [])
     MyProfile.getAll()
       .then(function (runs) {
         $scope.data.runs = runs;
+        return $scope.data.runs;
       })
       .then(function (runs) {
         console.log(runs);
