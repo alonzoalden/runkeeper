@@ -1,16 +1,17 @@
 var Q = require('q');
 var util = require('../config/utils.js');
-var Link = require('./linkModel.js');
+var Run = require('./runModel.js');
 
 
 //using q to promisify mongoose methods
-var findRun = Q.nbind(Link.findOne, Run);
-var createRun = Q.nbind(Link.create, Run);
-var findAllRuns = Q.nbind(Link.find, Run);
+var findRun = Q.nbind(Run.findOne, Run);
+var createRun = Q.nbind(Run.create, Run);
+var findAllRuns = Q.nbind(Run.find, Run);
 
 module.exports = {
 
-  allRuns: functon(req, res, next) {
+  allRuns: function (req, res, next) {
+
     findAllRuns({})
       .then(function (runs) {
         res.json(runs)
@@ -22,7 +23,7 @@ module.exports = {
 
   addRun: function (req, res, next) {
 
-    var calorieCalc = util.calorieCalc;
+    var totalCals = util.calorieCalc;
 
     var newRun = {
       date: req.body.date,
@@ -30,11 +31,18 @@ module.exports = {
       time: req.body.time,
       exertion: req.body.exertion,
       message: req.body.message,
-      calories: Number,
+      calories: totalCals,
     }
 
-
-    createRun(req)
+    createRun(newRun)
+      .then(function (createdRun) {
+        if (createdRun) {
+          return res.json(createdRun);
+        }
+      })
+      .fail(function (error) {
+        next(error);
+      });
   }
 
 };
