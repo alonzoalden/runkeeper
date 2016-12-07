@@ -6,9 +6,9 @@ angular.module('runkeeper.auth', [])
 .controller('AuthController', function ($scope, $window, $location, $rootScope, Auth) {
   $scope.user = {};
   $scope.signin = function () {
+    console.log("toEkMen: " + $scope.user)
     Auth.signin($scope.user)
       .then(function (token) {
-        console.log("toEkMen: " + token)
         $window.localStorage.setItem('com.runkeeper', token);
         $location.path('/myprofile');
       })
