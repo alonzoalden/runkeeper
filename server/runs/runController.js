@@ -25,6 +25,7 @@ module.exports = {
 
     var totalCals = util.calorieCalc;
 
+    console.log(req.body)
     var newRun = {
       date: req.body.date,
       distance: req.body.distance,
