@@ -5,7 +5,7 @@ angular.module('runkeeper.auth', [])
 
 .controller('AuthController', function ($scope, $window, $location, Auth) {
   $scope.user = {};
-
+  $scope.bgimg = "http://cdn.videos.thenorthface.com/84cncwMjrtfWLDl9_cIL9M0H2tcGyx3A/promo128033784";
   $scope.signin = function () {
     Auth.signin($scope.user)
       .then(function (token) {

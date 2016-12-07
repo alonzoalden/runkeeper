@@ -8,7 +8,8 @@
   <a href="#/signup">Don't have an account? <strong>Sign up</strong> ...</a>
 </div>
  -->
-<div class="container" style="width:50%;">
+<div ng-controller="AuthController" style="background-image: url({{ bgimg }})">
+<div class="container" style="width:30%;">
 
   <form name="signinForm" ng-submit='signin()' class="form-signin">
     <h2 class="form-signin-heading">Please sign in</h2>
@@ -23,3 +24,4 @@
     <p><a href="#/signup">Don't have an account? <strong>Sign Up HERE!</strong> </a></p>
   </center>
     </div> <!-- /container -->
+</div>
