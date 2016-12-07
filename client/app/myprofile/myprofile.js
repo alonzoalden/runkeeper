@@ -1,7 +1,6 @@
 angular.module('runkeeper.myprofile', [])
 
-.controller('MyProfileController', function ($scope, MyProfile) {
-  // Your code here
+.controller('MyProfileController', function ($scope, MyProfile, Auth) {
 
   $scope.data = {};
   $scope.data.totalPoints = 0;
@@ -9,6 +8,8 @@ angular.module('runkeeper.myprofile', [])
   $scope.data.totalTime = 0;
   $scope.data.totalRuns = 0;
   $scope.data.motivation = "";
+
+  $scope.data.userName = Auth.setUser()
 
   var initializeRuns = function () {
     MyProfile.getAll()
