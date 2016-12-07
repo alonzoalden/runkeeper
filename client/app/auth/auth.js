@@ -8,7 +8,7 @@ angular.module('runkeeper.auth', [])
     Auth.signin($scope.user)
       .then(function (token) {
         $window.localStorage.setItem('com.runkeeper', token);
-        $window.localStorage.setItem('username', $window.username);
+        $window.localStorage.setItem('username', $scope.user.username);
         $location.path('/myprofile');
       })
       .catch(function (error) {
