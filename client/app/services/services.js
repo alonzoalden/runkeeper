@@ -65,7 +65,7 @@ angular.module('runkeeper.services', [])
 
   var setUser = function() {
     return userName;
-  },
+  };
 
   return {
     signin: signin,
